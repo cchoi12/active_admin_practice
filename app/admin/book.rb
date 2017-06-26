@@ -11,5 +11,13 @@ ActiveAdmin.register Book do
 #   permitted << :other if params[:action] == 'create' && current_user.admin?
 #   permitted
 # end
-
+  index do
+    column :name
+    column :author
+    column :genre
+    column :price do |product|
+      number_to_currency product.price
+    end
+    actions
+  end
 end
