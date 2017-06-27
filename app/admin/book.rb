@@ -11,6 +11,11 @@ ActiveAdmin.register Book do
 #   permitted << :other if params[:action] == 'create' && current_user.admin?
 #   permitted
 # end
+  filter :name
+  filter :author, :as => :check_boxes
+  filter :genre, :as => :check_boxes
+  filter :price
+
   index do
     column :name
     column :author
